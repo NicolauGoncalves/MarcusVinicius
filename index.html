@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Acessos - Branta INTL School</title>
+  <style>
+    :root { 
+      --primary: #003366; 
+      --accent: #cc0000; 
+      --bg: #eef2f5; 
+      --text: #333; 
+      --white: #fff; 
+    }
+    
+    body { 
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+      background-color: var(--bg); 
+      color: var(--text); 
+      margin: 0; 
+      display: flex; 
+      flex-direction: column; 
+      min-height: 100vh; 
+    }
+    
+    header { 
+      background-color: var(--primary); 
+      color: var(--white); 
+      padding: 30px 20px; 
+      text-align: center; 
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+      border-bottom: 5px solid var(--accent); 
+    }
+    
+    header h1 { 
+      margin: 0; 
+      font-size: 1.8rem; 
+      text-transform: uppercase; 
+      letter-spacing: 1px; 
+    }
+    
+    header p { 
+      margin: 10px 0 0; 
+      font-size: 1rem; 
+      opacity: 0.9; 
+    }
+
+    main { 
+      flex: 1; 
+      max-width: 900px; 
+      margin: 50px auto; 
+      padding: 0 20px; 
+      width: 100%; 
+      box-sizing: border-box; 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center;
+      justify-content: center;
+    }
+
+    .grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+      gap: 25px; 
+      width: 100%; 
+    }
+
+    .card { 
+      background: var(--white); 
+      padding: 35px 25px; 
+      border-radius: 8px; 
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+      text-align: center; 
+      text-decoration: none; 
+      color: var(--text); 
+      transition: all 0.3s ease; 
+      border-top: 5px solid var(--primary); 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      justify-content: center; 
+    }
+
+    .card:hover { 
+      transform: translateY(-5px); 
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1); 
+      border-top-color: var(--accent); 
+    }
+
+    .card .icon { 
+      font-size: 3rem; 
+      margin-bottom: 15px; 
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .icon {
+      transform: scale(1.1);
+    }
+
+    .card h2 { 
+      color: var(--primary); 
+      margin: 0 0 10px 0; 
+      font-size: 1.2rem; 
+      text-transform: uppercase;
+    }
+
+    .card p { 
+      margin: 0; 
+      font-size: 0.9rem; 
+      color: #666; 
+      line-height: 1.4;
+    }
+
+    footer { 
+      text-align: center; 
+      padding: 20px; 
+      font-size: 0.8rem; 
+      color: #888; 
+      border-top: 1px solid #ddd; 
+      margin-top: auto; 
+    }
+  </style>
+</head>
+<body>
+
+<header>
+    <h1>Portal de Acessos</h1>
+    <p>Branta INTL School</p>
+	<p>Marcus Vinicius Gessolil</p>
+</header>
+
+<main>
+    <div class="grid">
+        <!-- Cartão Olimpíadas -->
+        <a href="https://nicolaugoncalves.github.io/Olimpiadas/" target="_blank" class="card">
+            <div class="icon">🏅</div>
+            <h2>Olimpíadas</h2>
+            <p>Acesse a plataforma oficial das Olimpíadas Branta.</p>
+        </a>
+
+        <!-- Cartão Relatório Docentes -->
+        <a href="https://script.google.com/macros/s/AKfycbx1VUbkItqMG2ct-8prF4LepXO2VGt6YzLBZNFrc_9To4ThU5eGcLOVJMg-diH0EoHLnQ/exec" target="_blank" class="card">
+            <div class="icon">👨‍🏫</div>
+            <h2>Relatório Docentes</h2>
+            <p>Acesse o painel de fechamentos e histórico de professores.</p>
+        </a>
+
+        <!-- Cartão Relatório Alunos -->
+        <a href="https://script.google.com/macros/s/AKfycbya32f0VjWZn5RiDSZ4mKxQ1HQhjTQb3P3yohdBweIN90iRya6NK-WrflxdlpjUCEgf/exec" target="_blank" class="card">
+            <div class="icon">📝</div>
+            <h2>Registro de Ocorrências</h2>
+            <p>Acesse o painel disciplinar e histórico de alunos.</p>
+        </a>
+    </div>
+</main>
+
+<footer>
+    <i>Created By - TE Nicolau</i>
+</footer>
+
+</body>
+</html>
