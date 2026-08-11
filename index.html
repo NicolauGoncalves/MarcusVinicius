@@ -65,6 +65,7 @@
       width: 100%; 
     }
 
+    /* Transformamos o card num botão disfarçado de link para usar o JavaScript Anti-Cache */
     .card { 
       background: var(--white); 
       padding: 35px 25px; 
@@ -79,6 +80,12 @@
       flex-direction: column; 
       align-items: center; 
       justify-content: center; 
+      cursor: pointer; 
+      border-left: none; 
+      border-right: none; 
+      border-bottom: none; 
+      width: 100%; 
+      font-family: inherit;
     }
 
     .card:hover { 
@@ -125,34 +132,49 @@
 
 <header>
     <h1>Branta INTL School</h1>
-	<p>Marcus Vinicius Gessolli</p>
+    <p>Marcus Vinicius Gessoli</p>
 </header>
 
 <main>
     <div class="grid">
-        <!-- Cartão Olimpíadas -->
-        <a href="https://nicolaugoncalves.github.io/Olimpiadas/" target="_blank" class="card">
+        <!-- Cartão Olimpíadas (Link normal, pois não é Apps Script) -->
+        <a href="https://nicolaugoncalves.github.io/Olimpiadas/" target="_blank" class="card" style="text-decoration: none;">
             <div class="icon">🏅</div>
             <h2>Olimpíadas Branta</h2>
+            <p> </p>
         </a>
 
-        <!-- Cartão Relatório Docentes -->
-        <a href="https://script.google.com/macros/s/AKfycbx1VUbkItqMG2ct-8prF4LepXO2VGt6YzLBZNFrc_9To4ThU5eGcLOVJMg-diH0EoHLnQ/exec" target="_blank" class="card">
+        <!-- Cartão Relatório Docentes (Com função Anti-Cache) -->
+        <button onclick="abrirSemCache('https://script.google.com/macros/s/AKfycbx1VUbkItqMG2ct-8prF4LepXO2VGt6YzLBZNFrc_9To4ThU5eGcLOVJMg-diH0EoHLnQ/exec')" class="card">
             <div class="icon">👨‍🏫</div>
             <h2>Relatório Docentes</h2>
-        </a>
+            <p> </p>
+        </button>
 
-        <!-- Cartão Relatório Alunos -->
-        <a href="https://script.google.com/macros/s/AKfycbya32f0VjWZn5RiDSZ4mKxQ1HQhjTQb3P3yohdBweIN90iRya6NK-WrflxdlpjUCEgf/exec" target="_blank" class="card">
+        <!-- Cartão Relatório Alunos (Com função Anti-Cache) -->
+        <button onclick="abrirSemCache('https://script.google.com/macros/s/AKfycbya32f0VjWZn5RiDSZ4mKxQ1HQhjTQb3P3yohdBweIN90iRya6NK-WrflxdlpjUCEgf/exec')" class="card">
             <div class="icon">📝</div>
             <h2>Registro de Ocorrências Alunos</h2>
-        </a>
+            <p> </p>
+        </button>
     </div>
 </main>
 
 <footer>
     <i>Created By - TE Nicolau</i>
 </footer>
+
+<script>
+    // Função que burla o cache agressivo do Google Apps Script
+    function abrirSemCache(urlBase) {
+        // Pega o timestamp exato do momento do clique
+        const timestamp = new Date().getTime();
+        // Monta a URL nova enganando o navegador
+        const urlLimpa = urlBase + "?nocache=" + timestamp;
+        // Abre em uma nova guia
+        window.open(urlLimpa, '_blank');
+    }
+</script>
 
 </body>
 </html>
